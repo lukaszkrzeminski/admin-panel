@@ -1,9 +1,12 @@
 import React from 'react';
 import Header from "./common/Header";
+import Main from './common/Main';
 
 function App() {
   return (
-    <Header title="Dashboard" />
+    <Main>
+      <Header title="Dashboard" />
+    </Main>
   );
 }
 
