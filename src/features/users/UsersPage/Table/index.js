@@ -1,5 +1,5 @@
 import React from "react";
-import { Table, TableCell, TableHeaderCell, TableRow } from "./styled";
+import { Button, Table, TableCell, TableHeaderCell, TableRow } from "./styled";
 
 export const UsersTable = () => (
     <Table>
@@ -19,8 +19,12 @@ export const UsersTable = () => (
                 <TableCell>tmp Username</TableCell>
                 <TableCell>tpm Email</TableCell>
                 <TableCell>tmp City</TableCell>
-                <TableCell>Edit</TableCell>
-                <TableCell>Delete</TableCell>
+                <TableCell>
+                    <Button editUser>Edit</Button>
+                </TableCell>
+                <TableCell>
+                    <Button deleteUser>Delete</Button>
+                </TableCell>
             </TableRow>
         </tbody>
     </Table>
