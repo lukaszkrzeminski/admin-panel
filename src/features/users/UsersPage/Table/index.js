@@ -1,11 +1,16 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import { selectUsers } from "../../usersSlice";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchInitialUsers, selectUsers } from "../../usersSlice";
 import { Button, Table, TableCell, TableHeaderCell, TableRow } from "./styled";
 
 export const UsersTable = () => {
 
+    const dispatch = useDispatch();
     const userTable = useSelector(selectUsers);
+
+    useEffect( () => {
+        dispatch(fetchInitialUsers());
+    }, [dispatch]);
 
     return (
         <Table>
@@ -19,7 +24,7 @@ export const UsersTable = () => {
                     <TableHeaderCell>Edit</TableHeaderCell>
                     <TableHeaderCell>Delete</TableHeaderCell>
                 </TableRow>
-                {userTable.map(user =>
+                {userTable.map((user) =>
                     <TableRow key={user.id}>
                         <TableCell>{user.id}</TableCell>
                         <TableCell>{user.name}</TableCell>
