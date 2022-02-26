@@ -23,5 +23,5 @@ export const ParagraphHeader = styled.span`
 
 export const ParagraphBody = styled.span`
     padding: 10px;
-    margin: 0;
+    margin: 0 10px;
 `;
