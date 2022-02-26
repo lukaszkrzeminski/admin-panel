@@ -5,7 +5,6 @@ import { fetchInitialUsers, fetchInitialUsersError, fetchInitialUsersSuccess } f
 function* fetchInitialUsersHandler() {
     try {
         const initialUsers = yield call(getInitialUsers)
-        console.log(initialUsers)
         yield put(fetchInitialUsersSuccess(initialUsers))
     } catch (error) {
         yield put(fetchInitialUsersError());
