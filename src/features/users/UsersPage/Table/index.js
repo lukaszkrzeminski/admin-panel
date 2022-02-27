@@ -1,15 +1,22 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchInitialUsers, selectUsers } from "../../usersSlice";
+import { fetchInitialUsers, selectInitialStateSet, selectUsers, setUsersList } from "../../usersSlice";
 import { Button, Table, TableCell, TableHeaderCell, TableRow } from "./styled";
 
 export const UsersTable = () => {
 
     const dispatch = useDispatch();
     const userTable = useSelector(selectUsers);
+    const isInitialStateSet = useSelector(selectInitialStateSet);
 
     useEffect( () => {
-        dispatch(fetchInitialUsers());
+        if(isInitialStateSet === false){
+            dispatch(fetchInitialUsers());
+        }
+        else {
+            dispatch(setUsersList(userTable));
+        }
+        
     }, [dispatch]);
 
     return (
