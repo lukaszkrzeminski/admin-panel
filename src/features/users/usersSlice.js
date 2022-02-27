@@ -8,6 +8,7 @@ const usersSlice = createSlice({
         lastId: 10,
         initialStateSet: false,
         currentId: "",
+        isPopupVisible: false,
     },
     reducers: {
         fetchInitialUsers: (state) => {
@@ -45,6 +46,12 @@ const usersSlice = createSlice({
                 state.users[payload.id-1].address.city = payload.city;
             }
         },
+        setPopupVisible: (state) => {
+            state.isPopupVisible = true;
+        },
+        resetPopupVisible: (state) => {
+            state.isPopupVisible = false;
+        },
     },
 });
 
@@ -56,6 +63,8 @@ export const {
     addNewUser,
     saveCurrentId,
     editUserData,
+    setPopupVisible,
+    resetPopupVisible,
 } = usersSlice.actions;
 
 const selectUsersState = state => state.users;
@@ -64,4 +73,5 @@ export const selectUsers = state => selectUsersState(state).users;
 export const selectLastId = state => selectUsersState(state).lastId;
 export const selectCurrentId = state => selectUsersState(state).currentId;
 export const selectInitialStateSet = state => selectUsersState(state).initialStateSet;
+export const selectIsPopupVisible = state => selectUsersState(state).isPopupVisible;
 export default usersSlice.reducer;
