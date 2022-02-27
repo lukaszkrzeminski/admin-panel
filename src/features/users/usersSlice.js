@@ -52,6 +52,10 @@ const usersSlice = createSlice({
         resetPopupVisible: (state) => {
             state.isPopupVisible = false;
         },
+        deleteUser: (state, { payload }) => {
+            const index = state.users.findIndex(user => user.id === payload);
+            state.users.splice(index, 1);
+        },
     },
 });
 
@@ -65,6 +69,7 @@ export const {
     editUserData,
     setPopupVisible,
     resetPopupVisible,
+    deleteUser,
 } = usersSlice.actions;
 
 const selectUsersState = state => state.users;
