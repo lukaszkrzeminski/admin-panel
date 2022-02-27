@@ -21,7 +21,7 @@ export const Form = () => {
             name: newName,
             username: "",
             email: newMail,
-            address: "",
+            address: {city: "",},
         }));
 
         history.push(toUsersList())
