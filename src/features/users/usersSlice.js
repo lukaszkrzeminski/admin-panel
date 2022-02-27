@@ -33,18 +33,10 @@ const usersSlice = createSlice({
             state.currentId = payload;
         },
         editUserData: (state, { payload }) => {
-            if(payload.name !== ""){
                 state.users[payload.id-1].name = payload.name;
-            }
-            if(payload.username !== ""){
                 state.users[payload.id-1].username = payload.username;
-            }
-            if(payload.email !== ""){
                 state.users[payload.id-1].email = payload.email;
-            }
-            if(payload.city !== ""){
                 state.users[payload.id-1].address.city = payload.city;
-            }
         },
         setPopupVisible: (state) => {
             state.isPopupVisible = true;
