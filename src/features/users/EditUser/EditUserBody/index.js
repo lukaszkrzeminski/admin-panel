@@ -38,6 +38,7 @@ export const EditUserBody = () => {
                     <LabelText>Name:</LabelText>
                     <Input
                         type="text"
+                        required
                         pattern={"^([A-Z][a-z]+([ ]?[a-z]?['-]?[A-Z][a-z]+)*)$"}
                         placeholder="new name"
                         value={name}
@@ -55,6 +56,7 @@ export const EditUserBody = () => {
                     <LabelText>E-mail:</LabelText>
                     <Input
                         type="email"
+                        required
                         pattern={"[a-z]+@+[a-z]+.+[a-z]"}
                         placeholder="new e-mail"
                         value={email}
