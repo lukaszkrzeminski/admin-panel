@@ -1,6 +1,6 @@
 # Demo:
 
-link soon
+https://lukaszkrzeminski.github.io/admin-panel/
 
 # Getting Started with Create React App
 
